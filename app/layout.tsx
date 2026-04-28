@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/navbar";
 import { Roboto } from "next/font/google";
-import { ParticlesProvider } from "@/context/particles";
 import { BackgroundPattern } from "@/components/background-pattern";
 
 const roboto = Roboto({
