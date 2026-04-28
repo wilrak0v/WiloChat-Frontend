@@ -10,8 +10,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function LoginPage() {
@@ -46,6 +48,10 @@ export default function LoginPage() {
                       type="password"
                       placeholder="d4247358053d2653c766274dc94db..."
                     ></Input>
+                    <div className="flex gap-2 item-center">
+                      <Checkbox></Checkbox>
+                      <Label>Show Key</Label>
+                    </div>
                   </Field>
                   <div className="flex gap-2 w-full justify-between"></div>
                 </CardContent>

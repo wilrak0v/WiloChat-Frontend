@@ -2,7 +2,12 @@
 
 import { createContext, useContext, useState } from "react";
 
-const ParticlesContext = createContext();
+type ParticlesContextType = {
+  enabled: boolean;
+  setEnabled: (value: boolean) => void;
+};
+
+const ParticlesContext = createContext<ParticlesContextType | null>(null);
 
 export function ParticlesProvider({ children }) {
   const [enabled, setEnabled] = useState(true);
