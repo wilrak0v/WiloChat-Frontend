@@ -10,7 +10,7 @@ export const BackgroundPattern = () => {
   const isLightTheme = resolvedTheme === "light";
 
   return (
-    <div>
+    <div className="relative">
       <DotPattern
         className={cn(
           "mask-[radial-gradient(ellipse,rgba(0,0,0,0.3)_30%,black_50%)]",

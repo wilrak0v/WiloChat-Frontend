@@ -20,14 +20,14 @@ export default function LoginPage() {
   return (
     <div>
       <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-        <Card className="px-5 w-full max-w-sm">
+        <Card className="px-5 w-full max-w-sm backdrop-blur-md">
           <Tabs defaultValue="login">
             <TabsList className="w-full">
               <TabsTrigger value="login">Login</TabsTrigger>
               <TabsTrigger value="create">Create a new key</TabsTrigger>
             </TabsList>
             <TabsContent value="login">
-              <Card>
+              <Card className="mb-5 mt-2">
                 <CardHeader>
                   <CardTitle>Login</CardTitle>
                   <CardDescription>
@@ -64,7 +64,7 @@ export default function LoginPage() {
               </Card>
             </TabsContent>
             <TabsContent value="create">
-              <Card>
+              <Card className="mb-5 mt-2">
                 <CardHeader>
                   <CardTitle>Generate a key</CardTitle>
                   <CardDescription>
