@@ -30,11 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ParticlesProvider>
-            <Navbar></Navbar>
-            <BackgroundPattern></BackgroundPattern>
-            {children}
-          </ParticlesProvider>
+          <Navbar></Navbar>
+          <BackgroundPattern></BackgroundPattern>
+          {children}
         </ThemeProvider>
       </body>
     </html>

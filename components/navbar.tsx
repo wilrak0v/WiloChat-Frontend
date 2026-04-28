@@ -9,14 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { FileBracesCorner, Menu, Zap } from "lucide-react";
-import { Switch } from "./ui/switch";
-import { Label } from "./ui/label";
-import { useParticles } from "@/context/particles";
 
 export function Navbar() {
-  const { enabled, setEnabled } = useParticles();
-
   return (
     <nav className="w-full z-50 border-b px-4 py-2 flex items-center justify-between">
       <div className="text-lg font-bold">
@@ -24,8 +18,6 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center space-x-2">
-        <Label>Particles</Label>
-        <Switch checked={enabled} onCheckedChange={setEnabled}></Switch>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">Menu</Button>

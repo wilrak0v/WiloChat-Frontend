@@ -4,14 +4,10 @@ import { useTheme } from "next-themes";
 import DotPattern from "@/components/ui/dot-pattern";
 import Particles from "@/components/ui/particles";
 import { cn } from "@/lib/utils";
-import { useParticles } from "@/context/particles";
 
 export const BackgroundPattern = () => {
   const { resolvedTheme } = useTheme();
   const isLightTheme = resolvedTheme === "light";
-  const { enabled } = useParticles();
-
-  if (!enabled) return null;
 
   return (
     <div>
