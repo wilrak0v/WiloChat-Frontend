@@ -2,13 +2,10 @@ import { ArrowUpRight, CirclePlay, Terminal, Zap } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BackgroundPattern } from "@/components/background-pattern";
 
 export default function Hero() {
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
-      <BackgroundPattern />
-
       <div className="relative z-10 max-w-3xl text-center">
         <Badge
           asChild
