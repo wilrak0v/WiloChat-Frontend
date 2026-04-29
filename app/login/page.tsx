@@ -1,3 +1,5 @@
+"use client";
+
 import { BackgroundPattern } from "@/components/background-pattern";
 import { TypographyP } from "@/components/typographie";
 import { Button } from "@/components/ui/button";
@@ -10,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -17,6 +20,8 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div>
       <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
@@ -45,11 +50,16 @@ export default function LoginPage() {
                     <FieldLabel>Private Key</FieldLabel>
                     <Input
                       id="priv-key"
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       placeholder="d4247358053d2653c766274dc94db..."
                     ></Input>
                     <div className="flex gap-2 item-center">
-                      <Checkbox></Checkbox>
+                      <Checkbox
+                        checked={showPassword}
+                        onCheckedChange={(checked) =>
+                          setShowPassword(!!checked)
+                        }
+                      ></Checkbox>
                       <Label>Show Key</Label>
                     </div>
                   </Field>
