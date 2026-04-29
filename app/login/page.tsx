@@ -18,9 +18,10 @@ import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CryptoGenerator from "@/components/generateKey";
 
 export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showKey, setShowKey] = useState(false);
 
   return (
     <div>
@@ -50,15 +51,13 @@ export default function LoginPage() {
                     <FieldLabel>Private Key</FieldLabel>
                     <Input
                       id="priv-key"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="d4247358053d2653c766274dc94db..."
+                      type={showKey ? "text" : "password"}
+                      placeholder="DecTmScTPzSNjGgSBaxOFPAY26nIhU6HSY3v1IyIy9Q"
                     ></Input>
                     <div className="flex gap-2 item-center">
                       <Checkbox
-                        checked={showPassword}
-                        onCheckedChange={(checked) =>
-                          setShowPassword(!!checked)
-                        }
+                        checked={showKey}
+                        onCheckedChange={(checked) => setShowKey(!!checked)}
                       ></Checkbox>
                       <Label>Show Key</Label>
                     </div>
@@ -74,23 +73,7 @@ export default function LoginPage() {
               </Card>
             </TabsContent>
             <TabsContent value="create">
-              <Card className="mb-5 mt-2">
-                <CardHeader>
-                  <CardTitle>Generate a key</CardTitle>
-                  <CardDescription>
-                    Your private key is used to access your account. It is
-                    generated locally and never leaves your device. Make sure to
-                    save it securely, as it cannot be recovered if lost.
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter className="flex-col gap-2">
-                  <ButtonGroup className="w-full">
-                    <Input readOnly />
-                    <Button variant="outline">Copy</Button>
-                  </ButtonGroup>
-                  <Button className="w-full">Generate</Button>
-                </CardFooter>
-              </Card>
+              <CryptoGenerator></CryptoGenerator>
             </TabsContent>
           </Tabs>
         </Card>
